@@ -1,0 +1,7 @@
+{
+  "name": "uzh-it-bears",
+  "version": "1.0.0",
+  "devDependencies": {
+    "cypress": "^15.4.0"
+  }
+}

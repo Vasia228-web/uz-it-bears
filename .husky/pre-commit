@@ -1,0 +1,6 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "🔍 Running ESLint and Prettier checks..."
+npx eslint . || exit 1
+npx prettier --check . || exit 1
