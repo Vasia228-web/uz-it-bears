@@ -1,0 +1,54 @@
+.container{
+    background-image: url("/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    background-color: rgb(255,255,255,0.7);
+    padding: 30px;
+    border-radius: 20px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    left: -80px;
+}
+
+.logo{
+    width: 60px;
+    margin-bottom: 10px;
+    border-radius: 80px;
+}
+
+.form{
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+input{
+    padding: 8px;
+    border-radius: 10px;
+    border:none;
+    background-color: #d9d9d9;
+}
+
+button{
+    background-color: #333;
+    color:white;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #555;
+}
