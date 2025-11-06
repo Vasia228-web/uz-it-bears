@@ -1,0 +1,145 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0e1a1a;
+    min-height: calc(100vh - 80px);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 40px 30px;
+    background: #1a2a2a;
+    border-radius: 15px;
+    color: white;
+    border: 1px solid #2d4a4a;
+}
+
+.header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #4af0fc;
+}
+
+.header p {
+    font-size: 18px;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.viewButton {
+    background: #4af0fc;
+    color: #0e1a1a;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.viewButton:hover {
+    transform: translateY(-2px);
+    background: #38d07f;
+    color: white;
+}
+
+.filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.searchInput {
+    flex: 1;
+    padding: 12px 20px;
+    border: 2px solid #2d4a4a;
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+    background-color: #152020;
+    color: white;
+}
+
+.searchInput:focus {
+    border-color: #4af0fc;
+}
+
+.searchInput::placeholder {
+    color: #666;
+}
+
+.categorySelect {
+    padding: 12px 20px;
+    border: 2px solid #2d4a4a;
+    border-radius: 25px;
+    font-size: 16px;
+    background: #152020;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+
+.categorySelect:focus {
+    border-color: #4af0fc;
+}
+
+.projectsList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.loading {
+    text-align: center;
+    font-size: 18px;
+    color: #4af0fc;
+    padding: 40px;
+}
+
+.error {
+    text-align: center;
+    font-size: 18px;
+    color: #ff6b6b;
+    padding: 40px;
+    background: #2a1a1a;
+    border-radius: 10px;
+    border: 1px solid #4a2d2d;
+}
+
+.noProjects {
+    text-align: center;
+    font-size: 18px;
+    color: #ccc;
+    padding: 40px;
+    background: #1a2a2a;
+    border-radius: 10px;
+    border: 1px solid #2d4a4a;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .filters {
+        flex-direction: column;
+    }
+    
+    .projectsList {
+        grid-template-columns: 1fr;
+    }
+    
+    .header h1 {
+        font-size: 28px;
+    }
+    
+    .header p {
+        font-size: 16px;
+    }
+}

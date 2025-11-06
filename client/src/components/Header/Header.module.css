@@ -1,0 +1,83 @@
+.header {
+    background-color: #1a2a2a;
+    color: #4af0fc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    border-bottom: 2px solid #2d4a4a;
+    height: 80px;
+}
+
+.logo {
+    color: #4af0fc;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    cursor: pointer;
+}
+
+.nav {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 25px;
+    flex: 1;
+    max-width: 600px;
+}
+
+.navButton {
+    color: white;
+    background: none;
+    border: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.navButton:hover {
+    color: #4af0fc;
+    background-color: #2d4a4a;
+    transform: translateY(-2px);
+}
+
+.navButton:active {
+    transform: translateY(0);
+}
+
+.userProfile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.userImage {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #4af0fc;
+    cursor: pointer;
+}
+
+.userButton {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+    font-family: inherit;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.userButton:hover {
+    color: #4af0fc;
+    background-color: #2d4a4a;
+}
