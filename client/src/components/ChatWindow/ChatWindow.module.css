@@ -1,0 +1,55 @@
+.ChatWindow {
+    flex: 1;
+    min-width: 300px;
+    background: #1a2a2a;
+    border-radius: 15px;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    border: 1px solid #2d4a4a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.ChatWindow h2 {
+    color: #4af0fc;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.ChatWindow h3 {
+    color: #4af0fc;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.ChatWindow p {
+    color: #ccc;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .ChatWindow {
+        width: 55%;
+        min-width: auto;
+        max-width: none;
+        margin: 5px;
+        padding: 15px;
+        font-size: 14px;
+    }
+    
+    .ChatWindow h2 {
+        font-size: 1.4rem;
+    }
+    
+    .ChatWindow h3 {
+        font-size: 1.2rem;
+    }
+    
+    .ChatWindow p {
+        font-size: 0.9rem;
+    }
+}

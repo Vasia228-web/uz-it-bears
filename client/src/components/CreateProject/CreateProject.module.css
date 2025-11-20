@@ -1,0 +1,137 @@
+.createProjectButton {
+    margin-bottom: 20px;
+}
+
+.openButton {
+    background: linear-gradient(145deg, #38d07f, #2bbd6d);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.openButton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(56, 208, 127, 0.3);
+}
+
+.createProjectForm {
+    background-color: #1d2e34;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    border: 1px solid #2a3d45;
+}
+
+.createProjectForm h3 {
+    color: #38d07f;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+.formGroup label {
+    display: block;
+    color: #8fa3b0;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.formGroup input,
+.formGroup textarea,
+.formGroup select {
+    width: 100%;
+    padding: 12px;
+    background-color: #242f3d;
+    border: 1px solid #2f4255;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus,
+.formGroup select:focus {
+    outline: none;
+    border-color: #38d07f;
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.fileUpload {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.fileLabel {
+    background-color: #242f3d;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.fileLabel:hover {
+    background-color: #2f4255;
+}
+
+.fileInput {
+    display: none;
+}
+
+.fileName {
+    color: #38d07f;
+    font-size: 14px;
+}
+
+.formActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.cancelButton {
+    background-color: #242f3d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.cancelButton:hover {
+    background-color: #2f4255;
+}
+
+.submitButton {
+    background-color: #38d07f;
+    color: #0e1a1a;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.submitButton:hover:not(:disabled) {
+    background-color: #2bbd6d;
+}
+
+.submitButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
