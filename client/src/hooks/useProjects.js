@@ -23,11 +23,11 @@ export function useProjects(){
         loadProjects();
     }, []);
 
-    const addProject = async (newProject) => { // Виправив newProjects → newProject
+    const addProject = async (newProject) => {
         try{
-            const project = projectsAPI.addProject(newProject); // Виправив projects → project
+            const project = projectsAPI.addProject(newProject);
             setProjects(prev => [...prev, project]);
-            return project; // Виправив projects → project
+            return project;
         } catch(err) {
             setError('Помилка додавання проекту');
             throw err;

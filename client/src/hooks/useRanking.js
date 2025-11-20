@@ -3,18 +3,25 @@ import { rankingAPI, pointsSystem } from '../data/rankingData';
 
 export function useRanking() {
     const [rankings, setRankings] = useState([]);
+    const [friendsRankings, setFriendsRankings] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-   
+ 
+    const friendsIds = [2, 3]; 
+
     const loadRankings = async () => {
         try {
             setLoading(true);
-           
-            const data = rankingAPI.getAllRankings();
-            setRankings(data);
+
+            const allData = rankingAPI.getAllRankings();
+            setRankings(allData);
             
 
+            const friendsData = allData.filter(item => 
+                friendsIds.includes(item.id)
+            );
+            setFriendsRankings(friendsData);
             
         } catch (err) {
             setError('Помилка завантаження рейтингів');
@@ -23,7 +30,6 @@ export function useRanking() {
             setLoading(false);
         }
     };
-
 
     const updateUserPoints = async (userId, action) => {
         try {
@@ -34,6 +40,12 @@ export function useRanking() {
                 
 
                 setRankings(prev => 
+                    prev.map(item => 
+                        item.id === userId ? updatedUser : item
+                    ).sort((a, b) => b.points - a.points)
+                );
+                
+                setFriendsRankings(prev => 
                     prev.map(item => 
                         item.id === userId ? updatedUser : item
                     ).sort((a, b) => b.points - a.points)
@@ -53,6 +65,7 @@ export function useRanking() {
 
     return {
         rankings,
+        friendsRankings,
         loading,
         error,
         updateUserPoints,

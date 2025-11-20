@@ -1,0 +1,215 @@
+
+.profileContainer {
+  width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+}
+
+.profileCard {
+  background: #1a2a2a;
+  border-radius: 16px;
+  padding: 36px 28px;
+  margin-bottom: 32px;
+  position: relative;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  min-height: 280px;
+}
+
+.profileHeader h1 {
+  margin: 0 0 8px 0;
+  font-size: 26px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.username {
+  color: #7c8a8a;
+  margin: 0 0 12px 0;
+  font-size: 14px;
+}
+
+.bio {
+  font-size: 15px;
+  margin: 0 0 8px 0;
+  color: #ccc;
+}
+
+.interests {
+  margin: 0 0 16px 0;
+  color: #ccc;
+  font-weight: 500;
+}
+
+.joinDate {
+  color: #999;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.actionButtons {
+  display: flex;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  gap: 10px;
+}
+
+.editBtn {
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #7b68ee 0%, #3498db 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.editBtn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+.shareBtn {
+  padding: 10px 16px;
+  background: rgba(152, 251, 152, 0.15);
+  color: #00c853;
+  border: 1px solid #00c853;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.shareBtn:hover {
+  transform: translateY(-4px);
+  background: rgba(0, 200, 83, 0.25);
+}
+
+
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 24px 0;
+}
+
+
+.statsContainer {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.statItem {
+  flex: 1;
+  text-align: center;
+}
+
+.statNumber {
+  font-size: 20px;
+  font-weight: 600;
+  color: #00ffcc;
+}
+
+.statLabel {
+  font-size: 13px;
+  color: #ccc;
+  margin-top: 4px;
+}
+
+.editForm{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.editInput{
+    width: 400px;
+    font-size: 16px;
+    font-weight: 600;
+    outline: none;
+    border:2px solid transparent;
+    background-color:#00c853 ;
+   
+}
+
+.editInput:focus{
+    border-color: #00ffcc;
+    box-shadow: 0 0 8px rgba(0, 255, 204, 0.3);
+}
+
+
+.levelCard {
+  background: #132222;
+  border-radius: 16px;
+  padding: 36px 28px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  min-height: 200px;
+}
+
+.levelCard h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.levelInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ccc;
+}
+
+.progressContainer {
+  margin-top: 10px;
+}
+
+.progressBar {
+  width: 100%;
+  height: 14px;
+  background: #263838;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #00ffcc, #007bff);
+  border-radius: 8px 0 0 8px;
+  transition: width 0.4s ease;
+}
+
+.progressText {
+  text-align: right;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+
+
+
+@media (max-width: 700px) {
+  .profileContainer {
+    width: 90%;
+    padding: 10px;
+  }
+  .profileCard,
+  .levelCard {
+    padding: 20px;
+  }
+  .actionButtons {
+    flex-direction: column;
+    top: 12px;
+    right: 12px;
+  }
+}

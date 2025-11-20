@@ -1,0 +1,132 @@
+.container{
+    background-image: url("/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    background-color: rgb(255,255,255,0.7);
+    padding: 30px;
+    border-radius: 20px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    left: -80px;
+    color:#333;
+}
+
+.logo{
+    width: 60px;
+    margin-bottom: 10px;
+    border-radius: 80px;
+}
+
+.form{
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input{
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+    background-color: #d9d9d9;
+}
+
+button{
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover{
+    background-color: #555;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.error {
+    background: rgba(255, 0, 0, 0.1);
+    color: #d63031;
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    font-size: 14px;
+}
+
+.infoBanner {
+    background: rgba(152, 251, 152, 0.3);
+    color: #2d5016;
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(152, 251, 152, 0.5);
+    font-size: 14px;
+}
+
+.checking {
+    color: #666;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.explanation {
+    color: #555;
+    font-size: 12px;
+    margin-top: 15px;
+    line-height: 1.4;
+}
+.authButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.authButton {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #333;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.authButton:hover {
+  background-color: #555;
+}
+
+.backButton {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.backButton:hover {
+  color: #333;
+}
+
+.backButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

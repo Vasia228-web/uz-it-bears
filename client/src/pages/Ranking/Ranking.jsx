@@ -3,11 +3,14 @@ import styles from './Ranking.module.css';
 import { useRanking } from '../../hooks/useRanking';
 
 export default function Ranking() {
-    const { rankings, loading, error } = useRanking();
+    const { rankings, friendsRankings, loading, error } = useRanking();
     const [activeTab, setActiveTab] = useState('all');
 
     if (loading) return <div className={styles.loading}>Завантаження...</div>;
     if (error) return <div className={styles.error}>{error}</div>;
+
+ 
+    const displayData = activeTab === 'friends' ? friendsRankings : rankings;
 
     return (
         <div className={styles.container}>
@@ -29,17 +32,26 @@ export default function Ranking() {
                     className={`${styles.tab} ${activeTab === 'friends' ? styles.active : ''}`}
                     onClick={() => setActiveTab('friends')}
                 >
-                    Друзі
+                    Друзі ({friendsRankings.length})
                 </button>
             </div>
 
+
+            {activeTab === 'friends' && friendsRankings.length === 0 && (
+                <div className={styles.emptyState}>
+                    <p>У вас поки що немає друзів у рейтингу</p>
+                    <small>Додайте друзів, щоб бачити їх тут</small>
+                </div>
+            )}
+
            
             <div className={styles.rankingList}>
-                {rankings.map((item, index) => (
+                {displayData.map((item, index) => (
                     <RankingItem 
                         key={item.id}
                         item={item}
                         position={index + 1}
+                        isFriend={activeTab === 'friends'}
                     />
                 ))}
             </div>
@@ -47,15 +59,15 @@ export default function Ranking() {
     );
 }
 
-
-function RankingItem({ item, position }) {
+function RankingItem({ item, position, isFriend }) {
     return (
-        <div className={styles.rankingItem}>
+        <div className={`${styles.rankingItem} ${isFriend ? styles.friendItem : ''}`}>
             <div className={styles.position}>#{position}</div>
             
             <div className={styles.avatar}>
                 <img src={item.avatar} alt={item.name} />
                 {item.type === 'team' && <span className={styles.teamBadge}>Команда</span>}
+                {isFriend && <span className={styles.friendBadge}>👥 Друг</span>}
             </div>
 
             <div className={styles.info}>

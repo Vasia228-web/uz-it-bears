@@ -1,89 +1,10 @@
-.container {
-    min-height: 100vh;
-    background-color: #0e1a1a;
-    display: flex;
-    flex-direction: column;
-}
-
-.newsFeed {
-    background-color: transparent;
-    min-height: auto;
-    color: white;
-    padding: 30px;
-    flex: 1;
-    max-width: 800px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-.newsFeed h2 {
-    color: #38d07f;
-    font-size: 28px;
-    margin-bottom: 25px;
-    text-align: center;
-}
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 25px;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.tabs {
-    display: flex;
-    background-color: #1d2e34;
-    border-radius: 12px;
-    padding: 5px;
-    gap: 5px;
-}
-
-.tab {
-    background-color: transparent;
-    color: #8fa3b0;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: all 0.3s ease;
-}
-
-.tab:hover {
-    color: white;
-    background-color: #2a3d45;
-}
-
-.activeTab {
-    background-color: #38d07f;
-    color: #0e1a1a;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-.activeTab:hover {
-    background-color: #2bbd6d;
-}
-
-.postsList {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
 .post {
     background-color: #1d2e34;
     padding: 25px;
     border-radius: 15px;
     border: 1px solid #2a3d45;
     transition: transform 0.2s ease;
+    margin-bottom: 20px;
 }
 
 .post:hover {
@@ -230,31 +151,3 @@
     opacity: 0.6;
     cursor: not-allowed;
 }
-
-.loading {
-    text-align: center;
-    color: #38d07f;
-    font-size: 18px;
-    padding: 50px;
-}
-
-.error {
-    text-align: center;
-    color: #ff6b6b;
-    font-size: 18px;
-    padding: 50px;
-    background-color: #2a1e1e;
-    border-radius: 10px;
-    margin: 20px;
-}
-
-.noPosts {
-    text-align: center;
-    color: #8fa3b0;
-    font-size: 16px;
-    padding: 40px;
-    background-color: #1d2e34;
-    border-radius: 15px;
-    border: 2px dashed #2a3d45;
-}
-

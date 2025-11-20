@@ -41,12 +41,6 @@ export default function Header(){
                 >
                     Ранг
                 </button>
-                {/* <button 
-                    className={styles.navButton}
-                    onClick={() => handleNavigation('events')}
-                >
-                    Події
-                </button> */}
             </nav>
             <div className={styles.userProfile}>
                 <img 
