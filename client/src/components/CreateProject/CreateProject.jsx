@@ -1,5 +1,5 @@
-import { useContext } from "react";
-import { AuthContext } from "../../hooks/AuthContext";
+import { useState } from "react";
+import { useAuth } from "../../hooks/AuthContext";
 import styles from './CreateProject.module.css';
 
 export default function CreateProject({ onProjectCreated }) {

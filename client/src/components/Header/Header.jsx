@@ -1,8 +1,10 @@
 import styles from "./Header.module.css"
 import { useNavigate } from "react-router-dom"
+import { useAuth } from "../../hooks/AuthContext";
 
 export default function Header(){
     const navigate = useNavigate();
+    const {logout} = useAuth();
 
     const handleNavigation = (page) => {
         navigate(`/${page}`);
@@ -54,6 +56,13 @@ export default function Header(){
                     onClick={() => handleNavigation('profile')}
                 >
                     Користувач
+                </button>
+
+                <button
+                     className={styles.userButton}
+                     onClick={logout}
+                >
+                    Вийти із акаунту
                 </button>
             </div>
         </header>

@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
+
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
-import { AuthContext } from './hooks/AuthContext';
+import { useAuth } from './hooks/AuthContext';
 
 import Home from "./pages/Home/Home.jsx";
 import Auth from "./pages/Auth/Auth.jsx"; 
@@ -14,7 +14,7 @@ import ProfilePage from './pages/ProfilePage/ProfilePage.jsx';
 import './App.module.css';
 
 function App() {
-  const { user, isLoading } = useContext(AuthContext);
+  const { user, isLoading } = useAuth();
 
   if (isLoading) {
     return <div className="loading">Завантаження...</div>;

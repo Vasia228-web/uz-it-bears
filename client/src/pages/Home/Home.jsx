@@ -3,6 +3,7 @@ import { usePosts } from '../../hooks/usePosts';
 import CreatePost from '../../components/Post/CreatePost/CreatePost';
 import Post from '../../components/Post/Post';
 import styles from './Home.module.css';
+import { useAuth } from "../../hooks/AuthContext";
 
 export default function Home() {
   const { user } = useAuth();
