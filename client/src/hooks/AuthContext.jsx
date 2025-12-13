@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import authService from "../services/authService.js";
 
-const AuthContext = createContext(null);
+export const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -12,17 +12,17 @@ export const AuthProvider = ({ children }) => {
       try {
         const data = await authService.refresh();
 
+        
         if (data?.accessToken && data?.user) {
           localStorage.setItem("accessToken", data.accessToken);
           localStorage.setItem("userData", JSON.stringify(data.user));
           setUser(data.user);
-        } else {
-          setUser(null);
         }
-
       } catch (err) {
+        
         setUser(null);
       } finally {
+        
         setIsLoading(false);
       }
     };
