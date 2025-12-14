@@ -21,7 +21,7 @@ class UserServiсe{
         const user = await UserModel.create({email, name, password: hashPssword, activationLink})
         await mailService.sendActivationMail(email,`${process.env.API_URL}/api/activate/${activationLink}`)
 
-        const userDto = new UserDto(user)//email, id, isActivated
+        const userDto = new UserDto(user) 
         const tokens =tokenService.generateTokens({...userDto})
         await tokenService.saveToken(userDto.id, tokens.refreshToken)
 
@@ -61,24 +61,29 @@ class UserServiсe{
     }
 
 
-    async refresh(refreshToken){
-        if(!refreshToken){
-            throw ApiError.UnauthorizedError()
-        }
+    async refresh(refreshToken) {
 
-        const userData = tokenService.validateRefreshToken(refreshToken);
-        const tokenFromDb = await tokenService.findToken(refreshToken);
-        if(!userData || !tokenFromDb){
-            throw ApiError.UnauthorizedError()
-        }
-
-        const user = await UserModel.findById(userData.id)
-        const userDto = new UserDto(user);
-        const tokens = tokenService.generateTokens({...userDto})
-
-        await tokenService.saveToken(userDto.id, tokens.refreshToken)
-        return{...tokens, user: userDto }
+    
+    if (!refreshToken) {
+        return null;
     }
+
+    const userData = tokenService.validateRefreshToken(refreshToken);
+    const tokenFromDb = await tokenService.findToken(refreshToken);
+
+    
+    if (!userData || !tokenFromDb) {
+        return null;
+    }
+
+    const user = await UserModel.findById(userData.id);
+    const userDto = new UserDto(user);
+    const tokens = tokenService.generateTokens({ ...userDto });
+
+    await tokenService.saveToken(userDto.id, tokens.refreshToken);
+
+    return { ...tokens, user: userDto };
+}
 
     async getAllUsers(){
         const users = await UserModel.find()

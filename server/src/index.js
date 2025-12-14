@@ -10,11 +10,8 @@ const PORT = process.env.PORT || 5001;
 const app = express()
 
 app.use(cors({
-    credentials: true,
-    origin: process.env.CLIENT_URL,
-    methods: "GET,POST,PUT,DELETE",
-    allowedHeaders: "Content-Type, Authorization",
-    exposedHeaders: "set-cookie"
+  origin: process.env.CLIENT_URL,
+  credentials: true
 }));
 app.use(cookieParser())
 app.use(express.json())
