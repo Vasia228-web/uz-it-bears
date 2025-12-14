@@ -1,9 +1,9 @@
 import {useState, useEffect} from 'react';
-import { useAuth } from '../../hooks/useAuth';
 import styles from './Project.module.css';
 import {useProjects} from '../../hooks/useProjects.js';
 import ProjectCard from '../../components/CreateProject/ProjectCard/ProjectCard.jsx';
 import CreateProject from '../../components/CreateProject/CreateProject.jsx';
+import { useAuth } from "../../hooks/AuthContext";
 
 export default function Projects(){
     const { user } = useAuth();

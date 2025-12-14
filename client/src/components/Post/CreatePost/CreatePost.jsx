@@ -95,7 +95,7 @@ export default function CreatePost({ user, onCreatePost }) {
         
         <div className={styles.imageUpload}>
           <label>
-            📷 Додати зображення
+            Додати зображення
             <input
               type="file"
               accept="image/*"

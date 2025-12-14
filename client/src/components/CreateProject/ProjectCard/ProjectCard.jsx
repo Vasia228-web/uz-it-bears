@@ -69,7 +69,7 @@ export default function ProjectCard({ project, currentUser, onLike, onView }) {
                             onClick={(e) => handleUrlClick(e, project.projectUrl)}
                             className={styles.urlButton}
                         >
-                            🌐 Переглянути проект
+                             Переглянути проект
                         </button>
                     </div>
                 )}
@@ -80,7 +80,7 @@ export default function ProjectCard({ project, currentUser, onLike, onView }) {
                             onClick={(e) => handleDownloadClick(e, project.fileUrl)}
                             className={styles.downloadButton}
                         >
-                            📥 Завантажити ZIP
+                            Завантажити ZIP
                         </button>
                     </div>
                 )}

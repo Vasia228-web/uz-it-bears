@@ -1,7 +1,7 @@
 import styles from './ChatWindow.module.css';
 
+
 export default function ChatWindow({activeChatId,chatsData}){
-    // activeChat ми робимо для того щоб показати який чат зараз відкритий
     const activeChat = chatsData.find(chat => chat.id === activeChatId);
     if (!activeChat) {
         return(

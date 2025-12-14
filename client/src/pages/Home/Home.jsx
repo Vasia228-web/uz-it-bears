@@ -1,14 +1,14 @@
 import { useState } from 'react';
-import { useAuth } from '../../hooks/useAuth';
 import { usePosts } from '../../hooks/usePosts';
 import CreatePost from '../../components/Post/CreatePost/CreatePost';
 import Post from '../../components/Post/Post';
 import styles from './Home.module.css';
+import { useAuth } from "../../hooks/AuthContext";
 
 export default function Home() {
   const { user } = useAuth();
   const { posts, loading, error, createPost, likePost, addComment } = usePosts();
-  const [activeTab, setActiveTab] = useState('all'); // 'all' або 'my'
+  const [activeTab, setActiveTab] = useState('all'); 
 
 
   const filteredPosts = activeTab === 'my' 

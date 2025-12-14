@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { useAuth } from '../../hooks/useAuth';
+import { useState } from "react";
+import { useAuth } from "../../hooks/AuthContext";
 import styles from './CreateProject.module.css';
 
 export default function CreateProject({ onProjectCreated }) {
@@ -56,7 +56,7 @@ export default function CreateProject({ onProjectCreated }) {
                 fileUrl: formData.file ? URL.createObjectURL(formData.file) : null,
                 author: user.username,
                 authorId: user.id,
-                image: '/default-project.jpg' // Дефолтне зображення
+                image: '/default-project.jpg'
             };
 
             const result = await onProjectCreated(projectData);
@@ -179,7 +179,7 @@ export default function CreateProject({ onProjectCreated }) {
                     <label>ZIP файл проекту</label>
                     <div className={styles.fileUpload}>
                         <label className={styles.fileLabel}>
-                            📎 Завантажити ZIP
+                             Завантажити ZIP
                             <input
                                 type="file"
                                 accept=".zip"
