@@ -20,7 +20,6 @@ class UserController {
                 secure: false, 
                 sameSite: "lax", 
                 path: "/",
-                domain: "localhost"
             });
 
             return res.json(userData);
@@ -40,7 +39,6 @@ class UserController {
                 secure: false,
                 sameSite: "lax",
                 path: "/",
-                domain: "localhost"
             });
 
             return res.json(userData);
@@ -59,7 +57,7 @@ class UserController {
                 secure: false,
                 sameSite: "lax",
                 path: "/",
-                domain: "localhost"
+                
             });
 
             return res.json(token);
@@ -80,9 +78,13 @@ class UserController {
 
     async refresh(req, res, next) {
         try {
-
             const { refreshToken } = req.cookies;
             const userData = await userService.refresh(refreshToken);
+
+           
+            if (!userData) {
+                return res.json({ user: null, accessToken: null });
+            }
 
             res.cookie("refreshToken", userData.refreshToken, {
                 maxAge: 30 * 24 * 60 * 60 * 1000,
@@ -90,14 +92,15 @@ class UserController {
                 secure: false,
                 sameSite: "lax",
                 path: "/",
-                domain: "localhost"
             });
 
             return res.json(userData);
+
         } catch (e) {
             next(e);
         }
     }
+
 
     async getUsers(req, res, next) {
         try {
