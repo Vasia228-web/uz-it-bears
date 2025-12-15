@@ -18,7 +18,7 @@ class UserController {
                 maxAge: 30 * 24 * 60 * 60 * 1000,
                 httpOnly: true,
                 secure: true, 
-                sameSite: "lax", 
+                sameSite: "none", 
                 path: "/",
             });
 
@@ -37,7 +37,7 @@ class UserController {
                 maxAge: 30 * 24 * 60 * 60 * 1000,
                 httpOnly: true,
                 secure: true,
-                sameSite: "lax",
+                sameSite: "none",
                 path: "/",
             });
 
@@ -55,7 +55,7 @@ class UserController {
             res.clearCookie("refreshToken", {
                 httpOnly: true,
                 secure: true,
-                sameSite: "lax",
+                sameSite: "none",
                 path: "/",
                 
             });
@@ -90,7 +90,7 @@ class UserController {
                 maxAge: 30 * 24 * 60 * 60 * 1000,
                 httpOnly: true,
                 secure: true,
-                sameSite: "lax",
+                sameSite: "none",
                 path: "/",
             });
 
