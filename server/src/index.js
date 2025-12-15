@@ -9,10 +9,31 @@ const errorMiddleware = require('./middlewares/error-middlewares');
 const PORT = process.env.PORT || 5001;
 const app = express()
 
+// app.use(cors({
+//   origin: process.env.CLIENT_URL,
+//   credentials: true
+// }));
+
+// ...
+const allowedOrigins = [
+    process.env.CLIENT_URL, // Ваш основной/старый
+    /^https:\/\/uz-it-bears-\S+\.vercel\.app$/, // Регулярка для любых Vercel Preview/Deployment URL
+    // Можете добавить сюда и просто https://uz-it-bears.vercel.app, если он не попадет в .env
+];
+
 app.use(cors({
-  origin: process.env.CLIENT_URL,
-  credentials: true
+    origin: (origin, callback) => {
+        // Проверка, что origin разрешен (в массиве или соответствует регулярке)
+        if (!origin || allowedOrigins.find(o => o === origin || (o instanceof RegExp && o.test(origin)))) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    credentials: true
 }));
+
+
 
 app.use(cookieParser())
 app.use(express.json())
